@@ -4,7 +4,7 @@
 
 <p align="center">
     <a href="https://www.google.com/maps/place/seoul"><img src="https://img.shields.io/badge/Seoul-FE9C00?style=flat-square&logo=googlemaps&logoColor=white"></a>&nbsp;
-    <a href="https://en.wikipedia.org/wiki/Korea_University"><img src="https://custom-icon-badges.demolab.com/badge/Korea%20University-8b0029.svg?style=flat-square&logo=korea-university&logoColor=white"></a>
+    <a href="https://info.korea.edu/"><img src="https://custom-icon-badges.demolab.com/badge/Korea%20University-8b0029.svg?style=flat-square&logo=korea-university&logoColor=white"></a>
 </p>
 
 ---
