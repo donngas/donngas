@@ -51,5 +51,5 @@
     <a href="https://instagram.com/gggeun_h"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat-square&logo=Instagram&logoColor=white"></a>&nbsp;
     <a href="mailto:geunhyeong7420@korea.ac.kr"><img src="https://custom-icon-badges.demolab.com/badge/Email-790030.svg?style=flat-square&logo=mail&logoColor=white"></a>&nbsp;
     <a href="https://steamcommunity.com/id/Kor_Dongas/"><img src="https://custom-icon-badges.demolab.com/badge/Steam-171a21.svg?style=flat-square&logo=steam&logoColor=white"></a>&nbsp;
-    </br><sub>if you want to contact me :)</sub>
+    </br><sub>if you wish to contact me :)</sub>
 </p>
