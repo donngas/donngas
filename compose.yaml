@@ -9,6 +9,14 @@ services:
     ports:
       - "${LOCAL_PORT:-8234}:80"
 
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: donngas-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+
 networks:
   default:
     name: portfolio-network
