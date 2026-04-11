@@ -12,4 +12,11 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
-            docker compose up -d --pull always --remove-orphans
+          set -e
+          docker compose up -d --pull always --remove-orphans
+
+      - name: Prune unused Docker data
+        run: |
+          set -e
+          docker builder prune -f
+          docker image prune -f
