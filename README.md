@@ -9,7 +9,7 @@
 
 ---
 
-<h3> I'm learning by playing with... </h3>
+<h3> I'm learning by building with... </h3>
 
 <p>
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=fff">&nbsp;
@@ -21,7 +21,7 @@
     </br><small>from various projects and such.</small>
 </p>
 
-<h3> I've crossed paths with... </h3>
+<h3> I've had brief encounters with... </h3>
 
 <p>
     <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white">&nbsp;
@@ -50,6 +50,6 @@
 <p align="right">
     <a href="https://instagram.com/gggeun_h"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat-square&logo=Instagram&logoColor=white"></a>&nbsp;
     <a href="mailto:geunhyeong7420@korea.ac.kr"><img src="https://custom-icon-badges.demolab.com/badge/Email-790030.svg?style=flat-square&logo=mail&logoColor=white"></a>&nbsp;
-    <a href="https://steamcommunity.com/id/Kor_Dongas/"><img src="https://custom-icon-badges.demolab.com/badge/Steam-171a21.svg?style=flat-square&logo=steam&logoColor=white"></a>&nbsp;
+    <a href="https://steamcommunity.com/id/Kor_Dongas/"><img src="https://custom-icon-badges.demolab.com/badge/Steam-171a21.svg?style=flat-square&logo=steam&logoColor=white"></a>
     </br><small>if you wish to contact me :)</small>
 </p>
