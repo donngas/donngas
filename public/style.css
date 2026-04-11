@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #f7f7f7;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --divider-color: #dddddd;
+    --accent-color: #333333;
+    --tag-bg: #eeeeee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 650px;
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.badges {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.badges img {
+    height: 20px;
+    display: block;
+}
+
+.badges a {
+    transition: opacity 0.2s;
+    line-height: 0;
+}
+.badges a:hover {
+    opacity: 0.7;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--divider-color);
+    margin: 2.5rem 0;
+}
+
+.content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge-group img {
+    height: 20px;
+    display: block;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.socials {
+    text-align: right;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    transition: opacity 0.2s;
+    line-height: 0;
+}
+
+.social-links img {
+    height: 20px;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.5rem;
+        align-items: flex-start;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
