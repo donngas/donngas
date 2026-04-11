@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/Django-%23092E20.svg?style=flat-square&logo=django&logoColor=white">&nbsp;
     <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=fff">&nbsp;
     <img src="https://img.shields.io/badge/GitHub%20Actions-%23121011.svg?style=flat-square&logo=github&logoColor=white">&nbsp;
-    </br><small>from various projects and such.</small>
+    </br><small>in various projects and such.</small>
 </p>
 
 <h3> I've had brief encounters with... </h3>
