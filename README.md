@@ -25,9 +25,9 @@
 <p>
     <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white">&nbsp;
     <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=flat-square&logo=c%2B%2B&logoColor=white">&nbsp;
-    <img src="https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white">&nbsp;
     <img src="https://custom-icon-badges.demolab.com/badge/AWS%20EC2-%23FF9900.svg?style=flat-square&logo=aws&logoColor=white">&nbsp;
     <img src="https://img.shields.io/badge/GCP-%234285F4.svg?style=flat-square&logo=google-cloud&logoColor=white">&nbsp;
+    <img src="https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white">&nbsp;
     </br><small>from coursework, team projects, etc.</small>
 <p>
 
