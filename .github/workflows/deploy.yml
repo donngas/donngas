@@ -6,6 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
+    env:
+      TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
