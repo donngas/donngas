@@ -23,6 +23,7 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 2rem;
+    overflow-x: hidden;
 }
 
 .container {
@@ -123,6 +124,54 @@ body {
 .footer-note {
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+.banner-container {
+    position: fixed;
+    height: 44px;
+    background-color: #fadb14;
+    color: #000;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    z-index: 1000;
+    border-top: 3px dashed #000;
+    border-bottom: 3px dashed #000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    user-select: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.banner-top-right {
+    top: 70px;
+    right: -250px;
+    width: 900px;
+    transform: rotate(40deg);
+}
+
+.banner-bottom-left {
+    bottom: 70px;
+    left: -250px;
+    width: 900px;
+    transform: rotate(40deg);
+}
+
+.banner-content {
+    display: flex;
+    width: fit-content;
+}
+
+.marquee-text {
+    flex-shrink: 0;
+    animation: slide-banner 70s linear infinite;
+}
+
+@keyframes slide-banner {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 @media (max-width: 480px) {
