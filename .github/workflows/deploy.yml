@@ -5,21 +5,30 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
-    env:
-      TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Deploy with Docker Compose
+      - name: Install and Start WireGuard
         run: |
-          set -e
-          docker compose up -d --pull always --remove-orphans
+          sudo apt-get update
+          sudo apt-get install -y wireguard resolvconf
+          echo "${{ secrets.WIREGUARD_CONF }}" | sudo tee /etc/wireguard/wg0.conf > /dev/null
+          sudo chmod 600 /etc/wireguard/wg0.conf
+          sudo wg-quick up wg0
 
-      - name: Prune unused Docker data
-        run: |
-          set -e
-          docker builder prune -f
-          docker image prune -f
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: TUNNEL_TOKEN
+          script: |
+            set -e
+            cd ${{ secrets.PROJECT_PATH }}
+            git pull origin main
+            docker compose up -d --pull always --remove-orphans
+            docker builder prune -f
+            docker image prune -f
