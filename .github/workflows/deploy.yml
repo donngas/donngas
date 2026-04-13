@@ -1,0 +1,47 @@
+name: Manual Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install cloudflared
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cloudflared
+
+      - name: Set Access credentials
+        run: |
+          echo "CF_ACCESS_CLIENT_ID=${{ secrets.CF_ACCESS_CLIENT_ID }}" >> $GITHUB_ENV
+          echo "CF_ACCESS_CLIENT_SECRET=${{ secrets.CF_ACCESS_CLIENT_SECRET }}" >> $GITHUB_ENV
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Configure SSH to use Cloudflare
+        run: |
+          cat <<EOF >> ~/.ssh/config
+          Host myserver
+            HostName "${{ secrets.SSH_HOST_DOMAIN }}"
+            User "${{ secrets.SSH_USERNAME }}"
+            IdentityFile ~/.ssh/id_ed25519
+            IdentitiesOnly yes
+            UserKnownHostsFile ~/.ssh/known_hosts
+            StrictHostKeyChecking yes
+            ProxyCommand cloudflared access ssh --hostname %h
+          EOF
+          chmod 600 ~/.ssh/config
+
+      - name: Deploy via SSH
+        run: |
+          set -e
+          ssh myserver <<'EOF'
+          set -e
+          export TUNNEL_TOKEN='${{ secrets.TUNNEL_TOKEN }}'
+          cd ${{ secrets.PROJECT_PATH }} && git pull origin main && docker compose up -d --pull always --remove-orphans && docker builder prune -f && docker image prune -f
+          EOF
