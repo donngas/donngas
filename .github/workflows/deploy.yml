@@ -11,6 +11,11 @@ jobs:
       - name: Install cloudflared
         run: |
           sudo apt-get update
+          sudo apt-get install -y curl gpg
+          sudo install -d -m 0755 /usr/share/keyrings
+          curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloudflare-main.gpg
+          echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(. /etc/os-release && echo $VERSION_CODENAME) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list > /dev/null
+          sudo apt-get update
           sudo apt-get install -y cloudflared
 
       - name: Set Access credentials
