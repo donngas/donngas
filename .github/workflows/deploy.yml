@@ -38,7 +38,7 @@ jobs:
             IdentitiesOnly yes
             UserKnownHostsFile ~/.ssh/known_hosts
             StrictHostKeyChecking yes
-            ProxyCommand cloudflared access ssh --hostname %h
+            ProxyCommand sh -c 'cloudflared access ssh --hostname "$1" --service-token-id "$TUNNEL_SERVICE_TOKEN_ID" --service-token-secret "$TUNNEL_SERVICE_TOKEN_SECRET"' sh %h
           EOF
           chmod 600 ~/.ssh/config
 
