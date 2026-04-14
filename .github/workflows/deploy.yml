@@ -37,3 +37,9 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: ${{ env.IMAGE }}:${{ github.sha }},${{ env.IMAGE }}:latest
+
+      - name: Trigger Deploy
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.WATCHTOWER_TOKEN }}" \
+            ${{ secrets.WATCHTOWER_DEPLOY_URL }}
