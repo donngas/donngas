@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: nginx:alpine
+    image: ${PORTFOLIO_IMAGE:-ghcr.io/donngas/donngas:latest}
     container_name: donngas-landing-page
     labels:
       - "com.centurylinklabs.watchtower.enable=true"

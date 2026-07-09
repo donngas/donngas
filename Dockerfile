@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-# Copy custom nginx config and static site into the image
+# Bundle the landing page and fallback redirect behavior into one nginx image.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY public /usr/share/nginx/html
 
